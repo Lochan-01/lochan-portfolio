@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>.portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+</head>
+
+<body>
+  <!-- header design -->
+  <header class="header">
+    <a href="#" class="logo">.Portfolio<span class="animate" style="--i:1;"></span></a>
+
+    <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+   <nav class="navbar">
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+ <button onclick="window.open('https://github.com/Lochan-01', '_blank')"> Projects</button>
+  <a href="#contact">Contact</a>
+
+  <span class="active-nav"></span>
+  <span class="animate" style="--i:2;"></span>
+</nav>
+
+  </header>
+
+  <!-- home/hero section -->
+  <section class="home show-animate" id="home">
+    <div class="home-content">
+      <h1>Hi, I'm <span>Lochan S</span><span class="animate" style="--i:2;"></span></h1>
+      <div class="text-animate">
+        <h3>Full Stack Developer & Designer</h3>
+        <span class="animate" style="--i:3;"></span>
+      </div>
+      <p>
+        Passionate about building interactive digital experiences with clean, modern designs. I specialize in crafting high-quality web applications using React.js and the latest web technologies. Always learning, always creating.
+        <span class="animate" style="--i:4;"></span>
+      </p>
+
+      <div class="btn-box">
+        <a href="https://github.com/Lochan-01" class="btn">View Projects</a>
+        <a href="index.html#contact" class="btn">Contact Me</a>
+        <span class="animate" style="--i:5;"></span>
+      </div>
+    </div>
+    
+    <div class="home-imgHover">
+        <img src="gen.png" alt="Profile portrait" />
+        <span class="animate home-img" style="--i:5;"></span>
+    </div>
+
+      <div class="home-sci">
+      <a href="https://www.linkedin.com/in/lochan-s-7560b9292/"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/Lochan-01"><i class='bx bxl-github'></i></a>
+      <a href="https://www.instagram.com/lochu._01/?igsh=MTJ2YjNmcDVuNDVkZg%3D%3D#"><i class='bx bxl-instagram'></i></a>
+      <span class="animate" style="--i:6;"></span>
+    </div>
+  </section>
+ <br>
+ <br>
+ <!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="heading">About <span>Me</span></h2>
+    <p class="intro">
+      Hi! I'm <span>Lochan S</span>, a passionate <span>Web Developer</span> and <span>Designer</span>.
+      I love creating interactive and modern web experiences with clean designs.  
+      My focus is on crafting responsive websites and web applications using 
+      <span>React.js</span>, <span>JavaScript</span>, and the latest web technologies.
+    </p>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Currently, I am pursuing my <span>B.E. in Computer Science</span> and building 
+          real-world projects that solve problems creatively.  
+          I enjoy working on full-stack development, exploring AI/ML concepts, and always 
+          learning new tools to grow as a developer.
+        </p>
+        <p>
+          Outside of coding, I like collaborating on tech ideas, contributing to open-source, 
+          and constantly pushing my boundaries.
+        </p>
+      </div>
+
+      <div class="about-buttons">
+        <a href="https://github.com/Lochan-01" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h1 class="heading">Contact <span>Me</span></h1>
+    <p class="intro">
+      Let's build something amazing together!  
+      Feel free to <span>get in touch</span> with me for collaborations, projects, or opportunities.
+    </p>
+
+    <form id="contactForm">
+  <div class="input-box">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
+  <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+  <div class="contact-buttons">
+    <button type="submit" class="btn">Send Message</button>
+  </div>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value,
+  };
+
+  const res = await fetch("http://localhost:5000/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  if (res.redirected) {
+    window.location.href = res.url; // go to thankyou.html
+  }
+});
+</script>
+
+
+
+      <!-- Show response here -->
+      <p id="responseMsg"></p>
+    </div>
+  </div>
+</section>
+
+   </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
