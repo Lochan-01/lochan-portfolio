@@ -36,5 +36,17 @@ The backend is hosted on **Render** and the frontend is served from the same Exp
 ---
 
 ## 📂 Project Structure
-
+project-folder/
+│
+├── public/ # frontend files
+│ ├── index.html
+│ ├── thankyou.html
+│ ├── styles.css
+│ └── script.js
+│
+├── server.js # backend logic (Express + MongoDB)
+├── package.json
+├── package-lock.json
+├── secure.env / .env # environment variables (not pushed to GitHub)
+└── README.md
 
