@@ -294,7 +294,7 @@ section {
 .about {                                  
   top: -30px;
   background: var(--bg-color); /* fixed custom property */
-  padding: 222px 15%;
+  padding: 300px 15%;
   color: var(--text-color);
 }
 
@@ -807,3 +807,4 @@ section:nth-child(odd) .animate.scroll,
         width: 0;
     }
 }
+
